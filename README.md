@@ -62,6 +62,6 @@ vacuum_size: 10.0
 
 Documantation is not available yet. For now, please refer to the code and examples in the repository.
 
-## Example
+## Examples
 
 Example of a basic usage is provided in the `examples` directory.
