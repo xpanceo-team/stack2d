@@ -1,0 +1,82 @@
+[project]
+name = "stack2d"
+dynamic = ["version"]
+requires-python = ">=3.9"
+
+readme = "README.md"
+license = "BSD-3-Clause"
+description = "A universal interatomic potential for advanced materials modeling"
+authors = [
+  {name = "Arslan Mazitov", email = "amazitov@xpanceo.com"},
+]
+maintainers = [
+  {name = "Arslan Mazitov", email = "amazitov@xpanceo.com"},
+]
+
+dependencies = [
+    "ase",
+    "pymatgen",
+    "omegaconf",
+]
+
+keywords = ["molecular modeling"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: POSIX",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+repository = "https://github.com/xpanceo-team/stack2d"
+
+[project.scripts]
+stack2d = "stack2d.__main__:main"
+
+
+### ======================================================================== ###
+
+[build-system]
+requires = [
+    "setuptools >= 68",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "stack2d.__version__"}
+
+[tool.isort]
+skip = "__init__.py"
+profile = "black"
+line_length = 88
+indent = 4
+include_trailing_comma = true
+lines_after_imports = 2
+known_first_party = "stack2d"
+
+[tool.mypy]
+follow_imports = 'skip'
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+# ignore" a bunch of internal warnings with Python 3.12 and PyTorch
+filterwarnings = [
+    "ignore:ast.Str is deprecated and will be removed in Python 3.14:DeprecationWarning",
+    "ignore:Attribute s is deprecated and will be removed in Python 3.14:DeprecationWarning",
+    "ignore:ast.NameConstant is deprecated and will be removed in Python 3.14:DeprecationWarning",
+    "ignore:__array_wrap__ must accept context and return_scalar arguments:DeprecationWarning",
+]
+

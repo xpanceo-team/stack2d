@@ -1,0 +1,16 @@
+base_layers:
+  - name: graphene
+    path: graphene.xyz
+  - name: MoS2
+    path: MoS2.xyz
+  - name: hBN
+    path: hBN.xyz
+heterostructure:
+  - graphene: 2
+  - hBN: 1
+  - MoS2: 1
+  - graphene: 2
+gap: 3.0
+max_misfit: 5e-3
+max_area: 400
+vacuum_size: 10.0

@@ -1,0 +1,68 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Layered Heterostructure Specification",
+    "type": "object",
+    "properties": {
+        "base_layers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "path": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "path"
+                ],
+                "additionalProperties": false
+            },
+            "minItems": 1
+        },
+        "heterostructure": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "patternProperties": {
+                    "^[a-zA-Z0-9_]+$": {
+                        "type": "integer",
+                        "minimum": 1
+                    }
+                },
+                "minProperties": 1,
+                "maxProperties": 1,
+                "additionalProperties": false
+            },
+            "minItems": 1
+        },
+        "gap": {
+            "type": "number",
+            "minimum": 0
+        },
+        "max_misfit": {
+            "type": "number",
+            "minimum": 0
+        },
+        "max_area": {
+            "type": "number",
+            "minimum": 0
+        },
+        "vacuum_size": {
+            "type": "number",
+            "minimum": 0
+        }
+    },
+    "required": [
+        "base_layers",
+        "heterostructure",
+        "gap",
+        "max_misfit",
+        "max_area",
+        "vacuum_size"
+    ],
+    "additionalProperties": false
+}
