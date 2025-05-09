@@ -33,7 +33,7 @@ layer is defined by its name and path to the file containing the atomic structur
 The `heterostructure` section specifies the stacking order and number of layers for
 each base layer. The `gap` parameter defines the interlayer distance, and the
 `max_misfit` and `max_area` parameters control the maximum allowed lattice mismatch
-and are of the heterostructure, respectively. The `vacuum_size` parameter defines the
+and area of the heterostructure, respectively. The `vacuum_size` parameter defines the
 size of the vacuum region in the z-direction.
 
 
